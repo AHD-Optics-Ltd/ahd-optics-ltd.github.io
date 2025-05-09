@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imgs/AHDlogonoback.png" />
+    <link rel="icon" href="https://ahd-optics-lid.github.io/imgs/AHDlogonoback.png" />
     <title>AHD OPTICS</title>
     <style>
         * {
@@ -18,7 +18,9 @@
             color: #e0e0e0;
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth; /* 添加全局平滑滚动 */
         }
+        
         .navbar {
             position: fixed;
             top: 0;
@@ -101,6 +103,7 @@
             padding: 0 10%;
             position: relative;
             overflow: hidden;
+            scroll-margin-top: 80px; /* 防止导航栏遮挡 */
         }
         
         .hero-video {
@@ -161,6 +164,7 @@
             padding: 100px 5%;
             background: #121212;
             position: relative;
+            scroll-margin-top: 80px; /* 防止导航栏遮挡 */
         }
         
         .section-title {
@@ -210,10 +214,11 @@
             transform: scale(1);
         }
         footer {
-            padding: 50px 5%;
+            padding: 100px 5% 50px; /* 增加顶部内边距 */
             text-align: center;
             border-top: 1px solid #333;
             background: #121212;
+            scroll-margin-top: 80px; /* 防止导航栏遮挡 */
         }
         
         .social-links {
@@ -250,10 +255,11 @@
             <img src="https://ahd-optics-lid.github.io/imgs/optics-gray.png" alt="AHD OPTICS Logo" class="logo">
         </div>
         <div class="nav-links">
-            <a href="https://ahd-optics-lid.github.io#home">首页</a>
-            <a href="https://ahd-optics-lid.github.io#portfolio">作品集</a>
+            <a href="#home">首页</a>
+            <a href="#portfolio">作品集</a>
+            <a href="">素材库</a>
             <a href="">关于我们</a>
-            <a href="https://ahd-optics-lid.github.io#contact">联系我们</a>
+            <a href="#contact">联系我们</a>
         </div>
     </nav>
     <section class="hero" id="home">
@@ -305,34 +311,64 @@
     </footer>
     
     <script>
+        // 点击Logo返回顶部
         document.getElementById('logoLink').addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+        // 平滑滚动函数
+        function smoothScrollTo(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                const offset = 80; // 导航栏高度
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
+            }
+        }
+
+        // 导航链接平滑滚动
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = this.getAttribute('href');
+                smoothScrollTo(target);
             });
         });
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+
+        // 页面加载后执行
         document.addEventListener('DOMContentLoaded', function() {
+            // 确保视频加载后完全覆盖
             const video = document.querySelector('.hero-video');
-            video.style.height = '100%';
-            video.style.width = '100%';
+            if(video) {
+                video.style.height = '100%';
+                video.style.width = '100%';
+            }
             
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            // 设置当前年份
+            const yearElement = document.getElementById('currentYear');
+            if(yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (navbar) {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                }
+            });
         });
     </script>
 </body>
