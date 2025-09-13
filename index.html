@@ -159,7 +159,7 @@
             color: #121212;
         }
         
-        .portfolio {
+        .homegallery {
             padding: 80px 5%;
             background: var(--bg-color);
             position: relative;
@@ -304,7 +304,7 @@
         </div>
         <div class="nav-links">
             <a href="#home">首頁</a>
-            <a href="#portfolio">精選作品</a>
+            <a href="#homegallery">精選作品</a>
             <a href="#">作品集</a>
             <a href="#">素材庫</a>
             <a href="#">關於我們</a>
@@ -321,7 +321,7 @@
         </div>
     </section>
     
-    <section class="portfolio" id="portfolio">
+    <section class="homegallery" id="homegallery">
         <h2 class="section-title">精選作品</h2>
         <div class="gallery">
             <div class="gallery-item">
@@ -329,94 +329,4 @@
                 <div class="gallery-item-description">東莞CBD</div>
             </div>
             <div class="gallery-item">
-                <img src="./imgs/greater-china/cn-440304-1.jpg" alt="深圳天文台" class="gallery-img">
-                <div class="gallery-item-description">深圳天文台</div>
-            </div>
-            <div class="gallery-item">
-                <img src="./imgs/greater-china/cn-441900-1.jpg" alt="東莞銀屏山" class="gallery-img">
-                <div class="gallery-item-description">東莞銀屏山</div>
-            </div>
-            <div class="gallery-item">
-                <img src="./imgs/greater-china/cn-hksar-810000-2.jpg" alt="香港街頭" class="gallery-img">
-                <div class="gallery-item-description">香港街頭</div>
-            </div>
-            <div class="gallery-item">
-                <img src="./imgs/greater-china/cn-hksar-810000-1.jpg" alt="時鐘" class="gallery-img">
-                <div class="gallery-item-description">時鐘（香港）</div>
-            </div>
-            <div class="gallery-item">
-                <img src="./imgs/greater-china/cn-hksar-810000-3.jpg" alt="Apple ifc mall" class="gallery-img">
-                <div class="gallery-item-description">Apple ifc mall（香港）</div>
-            </div>
-        </div>
-    </section>
-    
-    <footer id="contact">
-        <p><span class="brand-name">聯絡我們</span></p>
-        <div class="social-links">
-            <a href="#contact" class="wechat">
-                <i class="fab fa-weixin"></i>
-                <div class="wechat-qrcode">
-                    <img src="./imgs/wechat-qrcode.png" alt="微信二維碼">
-                </div>
-            </a>
-            <a href="https://v.douyin.com/tU4_AIqttB4/" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.youtube.com/@AHDOPTICS" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/ahdoptics/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/61576363556521" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/AhdOptics" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="mailto:ahd-optics@outlook.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p class="copyright">© 2022-<span id="currentYear"></span> AHD OPTICS Ltd. All Rights Reserved.</p>
-    </footer>
-    
-    <script>
-        document.getElementById('logoLink').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        function smoothScrollTo(target) {
-            const element = document.querySelector(target);
-            if (element) {
-                const offset = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - offset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                smoothScrollTo(target);
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const yearElement = document.getElementById('currentYear');
-            if(yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
-
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.navbar');
-                if (navbar) {
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                <img src="./imgs/greater
