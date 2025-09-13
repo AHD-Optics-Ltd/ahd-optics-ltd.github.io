@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-family: 'Montserrat', 'PingFang HK', 'Microsoft JhengHei', sans-serif;
         }
         
         body {
@@ -163,7 +163,6 @@
         
         .portfolio {
             padding: 80px 5%;
-            /* 减少了 padding */
             background: var(--bg-color);
             position: relative;
             scroll-margin-top: 60px;
@@ -171,10 +170,8 @@
 
         .section-title {
             text-align: center;
-                    margin-bottom: 50px;
-            /* 减少了标题下方的间距 */
+            margin-bottom: 50px;
             font-size: 2rem;
-            /* 减小了标题字号 */
             position: relative;
         }
 
@@ -182,11 +179,9 @@
             content: '';
             position: absolute;
             width: 60px;
-            /* 缩短了标题下划线 */
             height: 3px;
             background: var(--accent-color);
             bottom: -10px;
-            /* 上移了标题下划线 */
             left: 50%;
             transform: translateX(-50%);
         }
@@ -194,9 +189,7 @@
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            /* 缩小了列宽 */
             gap: 20px;
-            /* 减少了间距 */
         }
 
         .gallery-item {
@@ -204,12 +197,10 @@
             overflow: hidden;
             aspect-ratio: 4 / 3;
             border-radius: 20px;
-            /* 稍微减少了圆角 */
             transition: transform 0.5s;
         }
 
         .gallery-img {
-
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -218,7 +209,6 @@
 
         .gallery-item:hover {
             transform: scale(1.03);
-            /* 稍微减少了放大比例 */
             z-index: 1;
         }
 
@@ -270,7 +260,6 @@
             opacity: 0.7;
         }
         
-        /* 微信二维码悬停效果 */
         .wechat-qrcode {
             position: absolute;
             bottom: 100%;
@@ -313,14 +302,14 @@
 <body>
     <nav class="navbar">
         <div class="logo-container" id="logoLink">
-            <img src="./imgs/optics-gray.png" alt="AHD OPTICS Logo" class="logo">
+            <img src="./imgs/optics-gray.png" alt="AHD OPTICS 標誌" class="logo">
         </div>
         <div class="nav-links">
-            <a href="#home">首页</a>
+            <a href="#home">首頁</a>
             <a href="#portfolio">作品集</a>
-            <a href="">素材库</a>
-            <a href="">关于我们</a>
-            <a href="#contact">联系我们</a>
+            <a href="">素材庫</a>
+            <a href="">關於我哋</a>
+            <a href="#contact">聯絡我哋</a>
         </div>
     </nav>
     
@@ -329,49 +318,49 @@
             <source src="./videos/home.webm" type="video/webm">
         </video>
         <div class="hero-content">
-            <h1>用镜头<br>捕捉世界之美</h1>
-            <p>我们是&emsp14;<span class="brand-name">AHD OPTICS</span>，一群热爱摄影的创作者。通过独特的视角，记录生活中的每一刻精彩瞬间。</p>
-            <a href="./about_us" class="cta-button">关于我们...</a>
+            <h1>用鏡頭<br>捉住世界嘅美</h1>
+            <p>我哋係&emsp14;<span class="brand-name">AHD OPTICS</span>，一班熱愛攝影嘅創作者。透過獨特嘅角度，記錄生活入面每一個精彩時刻。</p>
+            <a href="./about_us" class="cta-button">關於我哋...</a>
         </div>
     </section>
     
     <section class="portfolio" id="portfolio">
-        <h2 class="section-title">精选作品</h2>
+        <h2 class="section-title">精選作品</h2>
         <div class="gallery">
             <div class="gallery-item">
                 <img src="https://placehold.co/600x400" alt="城市夜景" class="gallery-img">
-                <div class="gallery-item-description">繁华都市的夜晚</div>
+                <div class="gallery-item-description">繁華都市嘅夜晚</div>
             </div>
             <div class="gallery-item">
-                <img src="https://placehold.co/600x400" alt="山间小路" class="gallery-img">
-                <div class="gallery-item-description">蜿蜒的山间小路</div>
+                <img src="https://placehold.co/600x400" alt="山間小路" class="gallery-img">
+                <div class="gallery-item-description">彎彎曲曲嘅山路</div>
             </div>
             <div class="gallery-item">
-                <img src="https://placehold.co/600x400" alt="海边日落" class="gallery-img">
-                <div class="gallery-item-description">壮丽的海边日落</div>
+                <img src="https://placehold.co/600x400" alt="海邊日落" class="gallery-img">
+                <div class="gallery-item-description">壯麗嘅海邊日落</div>
             </div>
             <div class="gallery-item">
                 <img src="https://placehold.co/600x400" alt="森林" class="gallery-img">
-                <div class="gallery-item-description">神秘的森林</div>
+                <div class="gallery-item-description">神秘嘅森林</div>
             </div>
             <div class="gallery-item">
                 <img src="https://placehold.co/600x400" alt="星空" class="gallery-img">
-                <div class="gallery-item-description">璀璨的星空</div>
+                <div class="gallery-item-description">璀璨嘅星空</div>
             </div>
             <div class="gallery-item">
-                <img src="https://placehold.co/600x400" alt="咖啡馆" class="gallery-img">
-                <div class="gallery-item-description">温暖的咖啡馆</div>
+                <img src="https://placehold.co/600x400" alt="咖啡館" class="gallery-img">
+                <div class="gallery-item-description">溫暖嘅咖啡店</div>
             </div>
         </div>
     </section>
     
     <footer id="contact">
-        <p><span class="brand-name">联系我们</span></p>
+        <p><span class="brand-name">聯絡我哋</span></p>
         <div class="social-links">
             <a href="#contact" class="wechat">
                 <i class="fab fa-weixin"></i>
                 <div class="wechat-qrcode">
-                    <img src="./imgs/wechat-qrcode.png" alt="微信二维码">
+                    <img src="./imgs/wechat-qrcode.png" alt="微信二維碼">
                 </div>
             </a>
             <a href="https://v.douyin.com/tU4_AIqttB4/" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -381,11 +370,10 @@
             <a href="https://twitter.com/AhdOptics" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="mailto:ahd-optics@outlook.com"><i class="fas fa-envelope"></i></a>
         </div>
-        <p class="copyright">© <span id="currentYear"></span> AHD OPTICS LTD. All Rights Reserved.</p>
+        <p class="copyright">© <span id="currentYear"></span> AHD OPTICS LTD. 版權所有</p>
     </footer>
     
     <script>
-        // 点击Logo返回顶部
         document.getElementById('logoLink').addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
@@ -393,7 +381,6 @@
             });
         });
 
-        // 平滑滚动函数
         function smoothScrollTo(target) {
             const element = document.querySelector(target);
             if (element) {
@@ -408,7 +395,6 @@
             }
         }
 
-        // 导航链接平滑滚动
         document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -417,22 +403,18 @@
             });
         });
 
-        // 页面加载后执行
         document.addEventListener('DOMContentLoaded', function() {
-            // 确保视频加载后完全覆盖
             const video = document.querySelector('.hero-video');
             if(video) {
                 video.style.height = '100%';
                 video.style.width = '100%';
             }
             
-            // 设置当前年份
             const yearElement = document.getElementById('currentYear');
             if(yearElement) {
                 yearElement.textContent = new Date().getFullYear();
             }
 
-            // 导航栏滚动效果
             window.addEventListener('scroll', function() {
                 const navbar = document.querySelector('.navbar');
                 if (navbar) {
