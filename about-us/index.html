@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>關於我們 - AHD OPTICS</title>
+  <title>AHD OPTICS Ltd.-About Us</title>
   <link rel="icon" href="../imgs/ahd.ico" />
   <style>
     * {
@@ -16,7 +16,7 @@
       background-color: #121212;
       color: #fff;
       line-height: 1.6;
-      scroll-behavior: smooth;
+      /* ❌ 已移除 scroll-behavior: smooth; */
     }
     /* Hero Intro Section */
     .intro {
@@ -28,6 +28,7 @@
       text-align: center;
       padding: 0 10%;
       background: url('../imgs/greater-china/cn-441900-1.jpg') no-repeat center center/cover;
+      background-attachment: fixed; /* 背景固定 */
       position: relative;
     }
     .intro::after {
@@ -50,15 +51,24 @@
       font-size: 1.2rem;
       opacity: 0.9;
     }
-    /* Timeline placeholder */
+
+    /* Timeline */
     .timeline {
-      margin-top: 40px;
+      margin-top: 60px;
       border-left: 3px solid #fff;
       padding-left: 20px;
       text-align: left;
+      position: relative;
     }
     .timeline-item {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateY(0);
     }
     .timeline-item h3 {
       font-size: 1.1rem;
@@ -68,6 +78,7 @@
       font-size: 0.95rem;
       opacity: 0.85;
     }
+
     /* Leadership Section */
     .leadership {
       padding: 80px 8%;
@@ -91,7 +102,7 @@
     .leader-img {
       width: 100%;
       height: auto;
-      border-radius: 20px; /* 蘋果風格長方形圓角 */
+      border-radius: 20px;
       object-fit: cover;
       margin-bottom: 15px;
       display: block;
@@ -110,6 +121,7 @@
       font-size: 0.95rem;
       opacity: 0.85;
     }
+
     footer {
       text-align: center;
       padding: 50px 5%;
@@ -152,25 +164,25 @@
     <h2 class="leadership-title">核心團隊</h2>
     <div class="leader-grid">
       <div class="leader-card">
-        <img src="../imgs/team/thomas.jpg" alt="Thomas Wan" class="leader-img">
+        <img src="https://www.apple.com/leadership/images/overview/ceo_image.jpg.large.jpg" alt="Thomas Wan" class="leader-img">
         <div class="leader-name">Thomas Wan</div>
         <div class="leader-role">社長 / 創辦人</div>
         <div class="leader-desc">負責社團的全面發展與技術指導，專注於開源硬件與創新項目。</div>
       </div>
       <div class="leader-card">
-        <img src="../imgs/team/member1.jpg" alt="成員A" class="leader-img">
+        <img src="https://www.apple.com/leadership/images/overview/ceo_image.jpg.large.jpg" alt="成員A" class="leader-img">
         <div class="leader-name">成員 A</div>
         <div class="leader-role">攝影總監</div>
         <div class="leader-desc">專注於人像與城市攝影，帶領團隊捕捉最動人的瞬間。</div>
       </div>
       <div class="leader-card">
-        <img src="../imgs/team/member2.jpg" alt="成員B" class="leader-img">
+        <img src="https://www.apple.com/leadership/images/overview/ceo_image.jpg.large.jpg" alt="成員B" class="leader-img">
         <div class="leader-name">成員 B</div>
         <div class="leader-role">設計與宣傳</div>
         <div class="leader-desc">負責社團品牌設計、展覽排版與宣傳物料製作。</div>
       </div>
       <div class="leader-card">
-        <img src="../imgs/team/member3.jpg" alt="成員C" class="leader-img">
+        <img src="https://www.apple.com/leadership/images/overview/ceo_image.jpg.large.jpg" alt="成員C" class="leader-img">
         <div class="leader-name">成員 C</div>
         <div class="leader-role">活動統籌</div>
         <div class="leader-desc">籌辦社團內外活動，推動社團與校園的交流合作。</div>
@@ -183,7 +195,20 @@
   </footer>
 
   <script>
+    // 年份自動更新
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Timeline 滾動動畫
+    const items = document.querySelectorAll('.timeline-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    items.forEach(item => observer.observe(item));
   </script>
 
 </body>
