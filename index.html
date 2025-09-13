@@ -381,23 +381,6 @@
             if (isMobileDevice()) {
                 window.location.href = "https://m.ahdoptics.com"; // 替換成你的移動端網站URL
             }
-    
-            // 現有桌面端代碼保持不變
-            const yearElement = document.getElementById('currentYear');
-            if(yearElement) {
-                yearElement.textContent = new Date().getFullYear();
-            }
-    
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.navbar');
-                if (navbar) {
-                    if (window.scrollY > 50) {
-                        navbar.classList.add('scrolled');
-                    } else {
-                        navbar.classList.remove('scrolled');
-                    }
-                }
-            });
         });
         document.getElementById('logoLink').addEventListener('click', function() {
             window.scrollTo({
