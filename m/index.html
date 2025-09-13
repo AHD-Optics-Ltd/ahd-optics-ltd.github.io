@@ -98,6 +98,12 @@
 </footer>
 
 <script>
+   document.addEventListener('DOMContentLoaded', function() {
+        const isDesktop = !/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isDesktop) {
+            window.location.href = "../"; // 替換成你的桌面端網址
+        }
+    });
     // 手機菜單切換
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -133,6 +139,7 @@
 </script>
 </body>
 </html>
+
 
 
 
